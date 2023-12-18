@@ -1,6 +1,5 @@
 import streamlit as st
 import base64
-
 import sys
 sys.path.insert(1, '')
 
@@ -29,7 +28,12 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-query = st.text_input("Query to search")
+# query = st.text_input("Query to search")
+col1, col2, col3 = st.columns(3)
+with col1:
+    image = st.file_uploader("Image to upload")
+with col2:
+    temperature = st.slider("Temperature",min_value=0.0,max_value=1.0, value=0.0, step=0.1)
 verbose = False
 temp = 0
 
@@ -38,7 +42,7 @@ generate = st.button("🤖Run Agent🤖")
 
 if generate:
     with st.spinner("Agent running..."):
-        result = agent.agent_start(query)
+        result = agent.agent_start(image.read(),temperature)
         st.success(result)
         st.balloons()
 
