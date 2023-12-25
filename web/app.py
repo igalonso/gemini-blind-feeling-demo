@@ -32,6 +32,7 @@ st.markdown(
 col1, col2, col3 = st.columns(3)
 with col1:
     image = st.file_uploader("Image to upload")
+    image.
 with col2:
     temperature = st.slider("Temperature",min_value=0.0,max_value=1.0, value=0.0, step=0.1)
 verbose = False
