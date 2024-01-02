@@ -1,5 +1,6 @@
 langchain
 streamlit
+
 gitpython
 streamlit-chat
 streamlit-extras
@@ -18,3 +19,4 @@ google-cloud-texttospeech
 spotipy
 geopy
 googlemaps
+pygame
